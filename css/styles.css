@@ -1,0 +1,57 @@
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+#wordcloud {
+    width: 60%;
+    float: left;
+}
+#wordcloud > a{
+    margin: 3%;
+}
+#information {
+    width: 30%;
+    float: right;
+}
+#information > h4 {
+    margin-top: 0px;
+}
+.topic {
+   cursor: pointer;
+}
+.topic:hover {
+    text-decoration: underline;
+}
+.size0 {
+    font-size: 100%;
+}
+
+.size1 {
+    font-size: 125%;
+}
+
+.size2 {
+    font-size: 150%;
+}
+
+.size3 {
+    font-size: 175%;
+}
+
+.size4 {
+    font-size: 200%;
+}
+
+.size5 {
+    font-size: 225%;
+}
+.positive {
+    color: green;
+}
+.negative {
+    color: red;
+}
+.neutral {
+    color: grey;
+}

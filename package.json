@@ -1,0 +1,21 @@
+{
+  "name": "WordCloud",
+  "version": "1.0.0",
+  "description": "a simple word cloud generator",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "./node_modules/http-server/bin/http-server",
+    "test": "./node_modules/karma/bin/karma start wordcloud.conf.js"
+  },
+  "author": "Raphael brand",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.7.1",
+    "karma": "^0.12.24",
+    "karma-jasmine": "^0.1.5"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.1.5"
+  },
+  "repository": "https://github.com/raphaelbrand/WordCloud"
+}
