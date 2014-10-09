@@ -16,6 +16,15 @@ App.Models.Topic = function(topic) {
 };
 
 App.viewHelpers = {
+    /*
+     * Initializes the windowSize depending on the number of text sizes.
+     * Example:
+     * var popularites = [1, 4, 5, 7, 8, 9]
+     * numOfTextSizes = 3
+     * Then:
+     * windowSize = 2
+     * size0 = [1, 4], size1 = [5, 7], size2 = [8, 9]
+     */
     init: function(topics, numOfTextSizes) {
         this.numOfTextSizes = numOfTextSizes;
         this.popularities = _
@@ -29,6 +38,9 @@ App.viewHelpers = {
         this.windowSize = parseInt(this.popularities.length / this.numOfTextSizes);
     },
 
+    /*
+     * Get the correct css color depending on the sentimentScore
+     */
     getClassBySentiment: function(topic) {
         if(topic.sentimentScore < 40) {
             return 'negative';
@@ -39,6 +51,10 @@ App.viewHelpers = {
         }
     },
 
+    /**
+     * Chooses one of n text size where n = numOfTextsizes depending on the
+     * totalMentions property.
+     */
     getSizeByPopularity: function(topic) {
         var index = this.popularities.indexOf(topic.totalMentions);
         var popularity = parseInt(index / this.windowSize, 10);
