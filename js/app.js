@@ -19,10 +19,10 @@ App.viewHelpers = {
     init: function(topics, numOfTextSizes) {
         this.numOfTextSizes = numOfTextSizes;
         this.popularities = _
-            .chain(_.values(topics))
+            .chain(topics)
             .map(function(topic) {
-                    return topic.totalMentions;
-                })
+                return topic.totalMentions;
+             })
             .uniq()
             .sortBy()
             .value();
@@ -62,12 +62,12 @@ App.Views.topicsView = _.template(
 );
 
 App.Views.informationView = _.template(
-        '<h4>Information on topic "<%= topic.label %>"</h4>' +
-        '<p>Total Mentions: <%= topic.totalMentions || 0 %></p>' +
-        '<ul>' +
-            '<li>Positive Mentions: <%= topic.sentiment.positive || 0 %></li>' +
-            '<li>Neutral Mentions: <%= topic.sentiment.neutral || 0 %></li>' +
-            '<li>Negative Mentions: <%= topic.sentiment.negative || 0%></li>' +
-        '</ul>'
-    );
+    '<h4>Information on topic "<%= topic.label %>"</h4>' +
+    '<p>Total Mentions: <%= topic.totalMentions || 0 %></p>' +
+    '<ul>' +
+        '<li>Positive Mentions: <%= topic.sentiment.positive || 0 %></li>' +
+        '<li>Neutral Mentions: <%= topic.sentiment.neutral || 0 %></li>' +
+        '<li>Negative Mentions: <%= topic.sentiment.negative || 0%></li>' +
+    '</ul>'
+);
 
